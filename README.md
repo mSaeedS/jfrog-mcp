@@ -128,25 +128,6 @@ For a stdio MCP client configuration:
 
 For agents that expect an `npx`-style MCP command, use the Node wrapper.
 
-Local development:
-
-```json
-{
-  "mcpServers": {
-    "jfrog": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "D:\\OneDrive - Systems Limited\\Desktop\\jfrog-mcp"
-      ],
-      "env": {
-        "JFROG_MCP_PROJECT_DIR": "D:\\OneDrive - Systems Limited\\Desktop\\jfrog-mcp"
-      }
-    }
-  }
-}
-```
-
 Uploaded GitHub repo:
 
 ```json
