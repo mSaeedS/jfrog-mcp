@@ -1,0 +1,23 @@
+{
+  "name": "jfrog-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "npx wrapper for the read-only JFrog MCP Python server.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mSaeedS/jfrog-mcp.git"
+  },
+  "bin": {
+    "jfrog-mcp": "bin/jfrog-mcp.js"
+  },
+  "files": [
+    "bin/",
+    "jfrog_mcp/**/*.py",
+    "pyproject.toml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
