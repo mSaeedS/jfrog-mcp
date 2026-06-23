@@ -179,46 +179,7 @@ $env:npm_config_cache = "$env:TEMP\npm-cache"
 npx -y "D:\OneDrive - Systems Limited\Desktop\jfrog-mcp" --version
 ```
 
-## Publishing
 
-Do not publish `.env`, `.secrets/`, `.venv/`, caches, or generated reports. The npm package uses a `files` allow-list so only the wrapper, Python source, `pyproject.toml`, and README are packed.
-
-For a shareable source zip, use the clean allow-list export instead of manually zipping the project folder:
-
-```bash
-python bin/build-clean-zip.py
-```
-
-The zip is written to `dist/jfrog-mcp-clean.zip` by default and includes only the documented source, test, wrapper, and metadata files.
-
-Option 1: private GitHub repository, no npm registry:
-
-```bash
-git init
-git add .
-git commit -m "Initial JFrog MCP"
-git remote add origin https://github.com/mSaeedS/jfrog-mcp.git
-git push -u origin main
-```
-
-Then use `npx -y github:mSaeedS/jfrog-mcp` in your agent.
-
-Option 2: npm or private npm-compatible registry:
-
-1. Change `package.json` `name` from `jfrog-mcp` to your scoped package, for example `@YOUR_SCOPE/jfrog-mcp`.
-2. Change `private` to `false`.
-3. Run `npm pack --dry-run` and confirm no secrets are included.
-4. Publish:
-
-```bash
-npm publish --access restricted
-```
-
-For Artifactory npm registry, use your registry URL:
-
-```bash
-npm publish --registry https://YOUR_ARTIFACTORY/artifactory/api/npm/YOUR_NPM_REPO/
-```
 
 ## Docker
 
